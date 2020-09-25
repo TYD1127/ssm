@@ -52,6 +52,7 @@ public class BookController {
             System.out.println(books);
             model.addAttribute("book", books);
             model.addAttribute("title","修改书籍信息");
+
         }else {
             model.addAttribute("title","添加书籍");
         }
@@ -71,13 +72,16 @@ public class BookController {
         System.out.println(book);
         if (book.getBookID() == null) {
             bookService.addBook(book);
+            model.addAttribute("msg","添加成功");
         } else {
 
             bookService.updateBook(book);
             Books books = bookService.queryBookById(book.getBookID());
-            model.addAttribute("books", books);
+            model.addAttribute("msg","修改成功");
         }
-        return "redirect:/book/allBook";
+        List<Books> list = bookService.queryAllBook();
+        model.addAttribute("list", list);
+        return "allBook";
     }
 
     @RequestMapping("/del/{bookId}")

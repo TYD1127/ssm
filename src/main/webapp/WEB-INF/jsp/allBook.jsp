@@ -16,6 +16,7 @@
             <div class="page-header">
                 <h1>
                     <small>书籍列表 —— 显示所有书籍</small>
+
                 </h1>
             </div>
         </div>
@@ -27,9 +28,11 @@
         </div>
     </div>
 
+    <div>${msg}</div>
     <div class="row clearfix">
         <div class="col-md-12 column">
             <table class="table table-hover table-striped">
+
                 <thead>
                 <tr>
                     <th>书籍编号</th>
@@ -41,7 +44,7 @@
                 </thead>
 
                 <tbody>
-                <c:forEach var="book" items="${requestScope.get('list')}">
+                <c:forEach var="book" items="${list}">
                     <tr>
                         <td>${book.getBookID()}</td>
                         <td>${book.getBookName()}</td>
@@ -53,6 +56,7 @@
                         </td>
                     </tr>
                 </c:forEach>
+
                 </tbody>
             </table>
         </div>

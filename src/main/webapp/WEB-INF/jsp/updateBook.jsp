@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 引入 Bootstrap -->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 <body>
 <div class="container">
@@ -16,6 +17,7 @@
                 <h1>
                     <small>${title}</small>
                 </h1>
+
             </div>
         </div>
     </div>
@@ -26,6 +28,7 @@
         书籍数量：<input type="text" name="bookCounts" value="${book.getBookCounts()}"/>
         书籍详情：<input type="text" name="detail" value="${book.getDetail() }"/>
         <input type="submit" value="提交"/>
+
     </form>
 
 </div>

@@ -40,22 +40,28 @@ public class BookController {
 
     /**
      * 跳转 添加/更新 页面
+     *
      * @param model
      * @param id
      * @return
      */
     @RequestMapping("/toUpdateBook")
     public String toUpdateBook(Model model, Integer id) {
-        if(id != null){
+        if (id != null) {
             Books books = bookService.queryBookById(id);
             System.out.println(books);
-            model.addAttribute("book",books );
+            model.addAttribute("book", books);
+            model.addAttribute("title","修改书籍信息");
+        }else {
+            model.addAttribute("title","添加书籍");
         }
+
         return "updateBook";
     }
 
     /**
      * 根据id添加或更新 book
+     *
      * @param model
      * @param book
      * @return
@@ -63,15 +69,17 @@ public class BookController {
     @RequestMapping("/updateBook")
     public String updateBook(Model model, Books book) {
         System.out.println(book);
-        if(book.getBookID() == null){
+        if (book.getBookID() == null) {
             bookService.addBook(book);
-        }else{
+        } else {
+
             bookService.updateBook(book);
             Books books = bookService.queryBookById(book.getBookID());
             model.addAttribute("books", books);
         }
         return "redirect:/book/allBook";
     }
+
     @RequestMapping("/del/{bookId}")
     public String deleteBook(@PathVariable("bookId") int id) {
         bookService.deleteBookById(id);

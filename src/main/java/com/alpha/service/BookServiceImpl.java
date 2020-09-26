@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class BookServiceImpl implements BookService {
 
     //调用dao层的操作，设置一个set接口，方便Spring管理
@@ -29,6 +30,11 @@ public class BookServiceImpl implements BookService {
 
     public Books queryBookById(int id) {
         return bookMapper.queryBookById(id);
+    }
+
+    public Books queryByName(String name) {
+
+        return bookMapper.queryByName(name);
     }
 
     public List<Books> queryAllBook() {

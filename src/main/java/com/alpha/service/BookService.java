@@ -19,4 +19,6 @@ public interface BookService {
     Books queryByName(String  name);
     //查询全部Book,返回list集合
     List<Books> queryAllBook();
+//    验证名字是否存在
+    Books checkName(String name);
 }

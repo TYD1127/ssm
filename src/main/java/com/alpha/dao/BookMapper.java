@@ -24,4 +24,5 @@ public interface BookMapper {
     //根据name查询,返回一个Book
     Books queryByName(String Name);
 
+    Books checkName(String name);
 }

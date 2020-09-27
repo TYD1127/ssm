@@ -39,5 +39,10 @@
       select * from ssmbuild.books
       where bookName = #{Name}
    </select>
+    <!--根据name查询Book-->
+    <select id="checkName" resultType="Books">
+      select * from ssmbuild.user
+      where uname = #{name}
+   </select>
 
 </mapper>

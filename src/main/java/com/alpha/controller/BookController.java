@@ -8,7 +8,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -104,12 +109,45 @@ public class BookController {
         List<Books> list = new ArrayList();
         if (books == null) {
             list = bookService.queryAllBook();
-            model.addAttribute("error","书籍名称不存在");
+            model.addAttribute("error", "书籍名称不存在");
         } else {
             list.add(books);
         }
         model.addAttribute("list", list);
         return "allBook";
+    }
+    @RequestMapping("/login")
+    public String login(String query, Model model) {
+
+        return "allBook";
+    }
+
+    /**
+     * 根据用户名查询
+     */
+    @RequestMapping("/a")
+    @ResponseBody
+    public String checkName(String uname ) {
+        String msg = "";
+        if (!uname.equals("")) {
+            Books query = bookService.checkName(uname);
+            if (null == query) {
+                msg = "用户不存在";
+            } else {
+                msg = "用户名正确";
+            }
+        }
+
+
+//        if (upwd != null) {
+//            if ("root".equals(upwd)) {
+//                msg = "ok";
+//            } else {
+//                msg = "error";
+//            }
+//        }
+
+        return msg;
     }
 
 }

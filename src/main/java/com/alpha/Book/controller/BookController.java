@@ -1,6 +1,7 @@
 package com.alpha.Book.controller;
 
 import com.alpha.Book.pojo.Books;
+import com.alpha.Book.pojo.User;
 import com.alpha.Book.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -48,7 +49,7 @@ public class BookController {
      * @return
      */
     @RequestMapping("/toUpdateBook")
-    public String toUpdateBook(Model model, Integer id) {
+    public String toUpdateBook( Model model, Integer id) {
         if (id != null) {
             Books books = bookService.queryBookById(id);
             System.out.println(books);
@@ -113,11 +114,7 @@ public class BookController {
         return "allBook";
     }
 
-    @RequestMapping("/login")
-    public String login(String query, Model model) {
 
-        return "allBook";
-    }
 
     /**
      * 根据用户名查询

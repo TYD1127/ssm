@@ -69,10 +69,11 @@
             <button type="submit" class="btn btn-primary form-control" style="font-family:SimSun-ExtB">立即注册</button>
             <span >${msg}</span>
         </div>
+        <div class="group" style="margin-left: 60%" >
+            <a  class="btn btn-default form-control" href="${pageContext.request.contextPath}/backed" style="background:rgba(35,12,255,0) ;">返回登陆</a>
+        </div>
     </form>
-    <div class="group" style="margin-left: 60%" >
-        <button  class="btn btn-default form-control" herf="/backed" style="background:rgba(35,12,255,0) ;">返回登陆</button>
-    </div>
+
 </div>
 </body>
 </html>

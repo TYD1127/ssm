@@ -32,4 +32,6 @@ public interface BookService {
 
     //    验证名字是否存在
     Books checkName(String name);
+    //用户登陆
+    User loginByName(User user);
 }

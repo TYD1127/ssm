@@ -44,6 +44,12 @@
       select * from ssmbuild.user
       where uname = #{name}
    </select>
+
+    <!--根据name pwd查询User-->
+    <select id="loginByName" resultType="User">
+      select * from ssmbuild.user
+      where uname = #{uname}
+   </select>
 <!--    添加一个用户-->
     <insert id="addUser" parameterType="User">
       insert into ssmbuild.user(uname,upwd)

@@ -50,4 +50,10 @@ public class BookServiceImpl implements BookService {
 
         return bookMapper.checkName(name);
     }
+
+    public User loginByName(User user) {
+        return bookMapper.loginByName(user);
+    }
+
+
 }

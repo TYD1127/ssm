@@ -1,7 +1,8 @@
-package com.alpha.service;
+package com.alpha.Book.service;
 
-import com.alpha.dao.BookMapper;
-import com.alpha.pojo.Books;
+import com.alpha.Book.dao.BookMapper;
+import com.alpha.Book.pojo.Books;
+import com.alpha.Book.pojo.User;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,6 +15,10 @@ public class BookServiceImpl implements BookService {
 
     public void setBookMapper(BookMapper bookMapper) {
         this.bookMapper = bookMapper;
+    }
+
+    public int addUser(User user) {
+        return bookMapper.addUser(user);
     }
 
     public int addBook(Books book) {

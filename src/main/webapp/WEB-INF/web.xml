@@ -25,7 +25,7 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
-    <!--encodingFilter-->
+    <!--encodingFilter编码过滤器-->
     <filter>
         <filter-name>encodingFilter</filter-name>
         <filter-class>

@@ -1,6 +1,7 @@
-package com.alpha.dao;
+package com.alpha.Book.dao;
 
-import com.alpha.pojo.Books;
+import com.alpha.Book.pojo.Books;
+import com.alpha.Book.pojo.User;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -9,6 +10,7 @@ public interface BookMapper {
 
     //增加一个Book
     int addBook(Books book);
+    int addUser(User user);
 
     //根据id删除一个Book
     int deleteBookById(@Param("bookID") int id);

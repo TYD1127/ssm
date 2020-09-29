@@ -1,7 +1,7 @@
-package com.alpha.controller;
+package com.alpha.Book.controller;
 
-import com.alpha.pojo.Books;
-import com.alpha.service.BookService;
+import com.alpha.Book.pojo.Books;
+import com.alpha.Book.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -10,10 +10,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -116,6 +112,7 @@ public class BookController {
         model.addAttribute("list", list);
         return "allBook";
     }
+
     @RequestMapping("/login")
     public String login(String query, Model model) {
 
@@ -125,9 +122,9 @@ public class BookController {
     /**
      * 根据用户名查询
      */
-    @RequestMapping("/a")
+    @RequestMapping("/checkName")
     @ResponseBody
-    public String checkName(String uname ) {
+    public String checkName(String uname) {
         String msg = "";
         if (!uname.equals("")) {
             Books query = bookService.checkName(uname);
@@ -137,16 +134,6 @@ public class BookController {
                 msg = "用户名正确";
             }
         }
-
-
-//        if (upwd != null) {
-//            if ("root".equals(upwd)) {
-//                msg = "ok";
-//            } else {
-//                msg = "error";
-//            }
-//        }
-
         return msg;
     }
 

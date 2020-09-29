@@ -45,15 +45,15 @@
         <!-- 注入sqlSessionFactory -->
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
         <!-- 给出需要扫描Dao接口包 -->
-        <property name="basePackage" value="com.alpha.dao"/>
+        <property name="basePackage" value="com.alpha.Book.dao"/>
     </bean>
 
     <!--service-->
     <!-- 扫描service相关的bean -->
-    <context:component-scan base-package="com.alpha.service"/>
+    <context:component-scan base-package="com.alpha.view.service"/>
 
     <!--BookServiceImpl注入到IOC容器中-->
-    <bean id="BookServiceImpl" class="com.alpha.service.BookServiceImpl">
+    <bean id="BookServiceImpl" class="com.alpha.Book.service.BookServiceImpl">
         <property name="bookMapper" ref="bookMapper"/>
     </bean>
 

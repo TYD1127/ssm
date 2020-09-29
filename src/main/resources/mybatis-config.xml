@@ -4,9 +4,9 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <typeAliases>
-        <package name="com.alpha.pojo"/>
+        <package name="com.alpha.Book.pojo"/>
     </typeAliases>
     <mappers>
-        <mapper resource="com/alpha/dao/BookMapper.xml"/>
+        <mapper resource="com/alpha/Book/dao/BookMapper.xml"/>
     </mappers>
 </configuration>

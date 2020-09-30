@@ -1,5 +1,5 @@
-#Name：SSM初级实践
-##所用技术：Spring+SpringMVC+Mybatis，Ajax+Bootstrap；
+# Name：SSM初级实践
+## 所用技术：Spring+SpringMVC+Mybatis，Ajax+Bootstrap；
 实现功能：数据库CUDR；AJax异步效验用户名；用户登录；
 
 Jquery：{

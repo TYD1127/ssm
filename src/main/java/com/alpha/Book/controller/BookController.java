@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@SuppressWarnings("unchecked")
 @Controller
 @RequestMapping("/book")
 public class BookController {

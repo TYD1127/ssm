@@ -1,5 +1,7 @@
-# ssm
-将添加修改页面整合成一个页面
+#Name：SSM初级实践
+##所用技术：Spring+SpringMVC+Mybatis，Ajax+Bootstrap；
+实现功能：数据库CUDR；AJax异步效验用户名；用户登录；
+
 Jquery：{
 ## #id
 选择器——概述：根据给定的ID匹配一个元素。
